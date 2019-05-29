@@ -59,11 +59,9 @@ vec3 color(const Ray& r, Hitable* world, int depth)
 }
 
 
-
-
 int main()
 {
-	ofstream   outImage("./Image/picture_1.ppm", ios::out);
+	ofstream   outImage("./Image/picture_2.ppm", ios::out);
 	if (!outImage)
 	{
 		cout << "open file error" << endl;
