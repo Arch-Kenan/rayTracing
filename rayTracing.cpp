@@ -48,7 +48,7 @@ vec3 color(const Ray& r, Hitable* world)
 
 
 
-
+// add newfeature
 int main()
 {
 	ofstream   outImage("./Image/picture_1.ppm", ios::out);
@@ -63,9 +63,6 @@ int main()
 	outImage << "P3\n" << nx << " " << ny << "\n255\n";
 	camera    renderCamera;
 
-	
-
-
 	Hitable *list[2];
 	// 球1
 	list[0] = new sphere(vec3(0, 0, -1), 0.5);
@@ -73,10 +70,6 @@ int main()
 	list[1] = new sphere(vec3(0, -100.5, -1), 100);      
 	Hitable* world = new HitableList(list, 2);
 	 
-
-
-
-
 	for (int j = ny -1 ; j >= 0 ; j--)
 	{   
 		for (int i = 0; i < nx; i++)
