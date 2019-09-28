@@ -1,1 +1,12 @@
-ADD_ALL_SUBDIR()
+
+#此函数将遍历所有该文件夹所有的cmakelist.txt。 若是没有将会出错
+#ADD_ALL_SUBDIR()
+
+
+#------------------------------------------------------
+
+add_subdirectory(OpenglDemo)
+
+add_subdirectory(rayTracing)
+
+
