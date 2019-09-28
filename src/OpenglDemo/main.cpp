@@ -1,7 +1,7 @@
 #pragma once
-#include <iostream>
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
+#include "common.h"
+#include "glad/glad.h"
+#include "GLFW/glfw3.h"
 
 #include "shader.h"
 
@@ -47,7 +47,8 @@ int main()
 
 	// build and compile our shader program
 	// ------------------------------------
-	Shader ourShader("./vShader.vs", "./fShader.fs"); // you can name your shader files however you like
+	Shader ourShader("D:\\SourceCode\\rayTracing\\src\\OpenglDemo\\ShaderFiles/vShader.vs", "D:\\SourceCode\\rayTracing\\src\\OpenglDemo\\ShaderFiles/fShader.fs"); // you can name your shader files however you like
+	coutCurrentDir();
 
 	// set up vertex data (and buffer(s)) and configure vertex attributes
 	// ------------------------------------------------------------------
