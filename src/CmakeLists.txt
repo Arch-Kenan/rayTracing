@@ -9,4 +9,6 @@ add_subdirectory(OpenglDemo)
 
 add_subdirectory(rayTracing)
 
+add_subdirectory(CppUtil)
+
 
