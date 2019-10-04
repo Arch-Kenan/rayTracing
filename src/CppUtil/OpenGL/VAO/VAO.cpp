@@ -113,7 +113,7 @@ bool VAO::Draw(const Shader & shader) const {
 	if (!Use() || !shader.Use())
 		return false;
 	if (hasIndex)
-		glDrawElements(GL_TRIANGLES, pointNum, GL_UNSIGNED_INT, NULL);
+		glDrawElements(GL_TRIANGLES, pointNum, GL_UNSIGNED_INT, 0);
 	else
 		glDrawArrays(GL_TRIANGLES, 0, pointNum);
 

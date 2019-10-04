@@ -12,7 +12,8 @@ uniform float RayNumMax;
 
 in vec2 TexCoords;
 
-void main(){
+void main()
+{
 	float curRayNum = texture(origin_curRayNum, TexCoords).w;
 	out_origin_curRayNum = vec4(vec3(0),min(curRayNum+1.0,RayNumMax));
 	out_rayTracingRst = curRayNum/RayNumMax*vec3(TexCoords,1.0);
