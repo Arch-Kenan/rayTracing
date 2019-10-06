@@ -4,7 +4,7 @@ set(TARGET_NAME "${DIRNAME}")
 
 #多个源文件用 [空格] 分隔
 file(GLOB  INCS "${CMAKE_CURRENT_SOURCE_DIR}/*.h" )
-file(GLOB  SRCS "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"  "${CMAKE_CURRENT_SOURCE_DIR}/*.c" )
+file(GLOB  SRCS "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp")
 
 file(GLOB SHADERS
 		"${CMAKE_CURRENT_SOURCE_DIR}/*.vs"
@@ -31,7 +31,7 @@ endforeach(SOURCE ${SHADERS})
 set(STR_TARGET_SOURCES "${STR_TARGET_SOURCES} ${CMAKE_SOURCE_DIR}/config/config.in")
 
 
-set(STR_TARGET_LIBS "ImgWindow RayCamera Hitable Image Math Material Scene")
+set(STR_TARGET_LIBS " ")
 
 SETUP_PROJECT(${MODE} ${TARGET_NAME} ${STR_TARGET_SOURCES} ${STR_TARGET_LIBS})
 

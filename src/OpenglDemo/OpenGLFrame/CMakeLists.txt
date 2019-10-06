@@ -33,4 +33,8 @@ set(STR_TARGET_LIBS "glfw3.lib assimp.lib Shader")
 
 SETUP_PROJECT(${MODE} ${TARGET_NAME} ${STR_TARGET_SOURCES} ${STR_TARGET_LIBS})
 
+#拷贝shader文件到目标文件夹
 INSTALL_SHADERS()
+
+#拷贝头文件到目标文件夹
+INSTALL_HEADER()

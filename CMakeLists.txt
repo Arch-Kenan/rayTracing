@@ -41,6 +41,22 @@ macro(INSTALL_SHADERS)
 	endforeach(SHADER)
 endmacro(INSTALL_SHADERS)
 
+
+# 复制头文件到目标文件夹
+macro(INSTALL_HEADER)
+	file(GLOB HEADERS
+		"${CMAKE_CURRENT_SOURCE_DIR}/*.h"
+		"${CMAKE_CURRENT_SOURCE_DIR}/*.in"
+		"${CMAKE_CURRENT_SOURCE_DIR}/*.hpp"
+	)
+	foreach(HEADER ${HEADERS})
+		string(REGEX MATCH "([^/]*)$" TMP ${HEADER})
+		add_custom_command(TARGET ${TARGET_NAME} PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy ${HEADER} "${CMAKE_SOURCE_DIR}/include/${FOLDER_NAME}/${DIRNAME}/${TMP}")
+		install(FILES ${HEADER} DESTINATION "include/${FOLDER_NAME}/${DIRNAME}")
+	endforeach(HEADER)
+endmacro(INSTALL_HEADER)
+
+
 #设置工程依名称，依赖库， 和安装路径（注意安装路径和编译路径不同）
 macro(SETUP_PROJECT MODE TARGET_NAME STR_TARGET_SOURCES STR_TARGET_LIBS)
 	string(REPLACE " " ";" LIST_TARGET_SOURCES ${STR_TARGET_SOURCES})
@@ -74,6 +90,12 @@ macro(SETUP_PROJECT MODE TARGET_NAME STR_TARGET_SOURCES STR_TARGET_LIBS)
 endmacro(SETUP_PROJECT TARGET_NAME STR_TARGET_SOURCES STR_TARGET_LIBS)
 #------------------------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
 
 
 
